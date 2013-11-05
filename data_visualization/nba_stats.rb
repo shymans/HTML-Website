@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+
 @playerarray = []
 
 File.open('nba_table.html', 'w') do |f|
@@ -7,9 +8,11 @@ File.open('nba_table.html', 'w') do |f|
   f.puts("<html>")
   f.puts("<head>")
   f.puts("<title>NBA Stats</title>")
+  f.puts("<link rel='stylesheet' href='style.css' type='text/css'/>")
   f.puts("</head>")
   f.puts("<body>")
   f.puts("<h1>Player Stats</h1>")
+  f.puts("<div align='center'>")
   f.puts("<table>")
 
   ["1", "41", "81", "121", "161", "201", "241", "281", "321", "361"].each do |url|  
@@ -53,6 +56,7 @@ File.open('nba_table.html', 'w') do |f|
   end
 
   f.puts("</table>")
+  f.puts("</div>")
   f.puts("</body>")
   f.puts("</html>")
 
